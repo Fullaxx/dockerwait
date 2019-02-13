@@ -19,4 +19,4 @@ The static version will be larger than the dynamically linked version, but it wi
 	killall dockerwait.static
 
 ## Install
-	In your Dockerfile: CMD ["/app/dockerwait.static"]
+	CMD ["/app/dockerwait.static"]
