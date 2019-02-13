@@ -18,5 +18,9 @@ The static version will be larger than the dynamically linked version, but it wi
 	killall dockerwait
 	killall dockerwait.static
 
+## Get
+	mkdir /app
+	curl -L https://github.com/Fullaxx/dockerwait/releases/download/scratch/dockerwait.static -o /app/dockerwait.static
+
 ## Install
 	CMD ["/app/dockerwait.static"]
