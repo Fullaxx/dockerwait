@@ -1,6 +1,6 @@
 /*
 	dockerwait is a simple program to keep a docker container open and running, until a signal is caught
-	Copyright (C) 2019 Brett Kuskie <fullaxx@gmail.com>
+	Copyright (C) 2022 Brett Kuskie <fullaxx@gmail.com>
 
 	MIT License
 
@@ -29,7 +29,7 @@
 
 int g_shutdown = 0;
 
-void sig_handler(int signum)
+static void sig_handler(int signum)
 {
 	g_shutdown = 1;
 }
