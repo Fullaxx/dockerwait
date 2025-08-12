@@ -46,7 +46,10 @@ int main(int argc, char *argv[])
 	while(!g_shutdown) { usleep(1000); }
 
 	char *dockerwait_exit_command = getenv("DOCKERWAIT_EXIT_COMMAND");
-	if (dockerwait_exit_command) { system(dockerwait_exit_command); }
+	if (dockerwait_exit_command) {
+		printf("DOCKERWAIT_EXIT_COMMAND: %s\n", dockerwait_exit_command);
+		system(dockerwait_exit_command);
+	}
 
 	return 0;
 }
