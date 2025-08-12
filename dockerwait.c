@@ -1,6 +1,6 @@
 /*
 	dockerwait is a simple program to keep a docker container open and running, until a signal is caught
-	Copyright (C) 2022 Brett Kuskie <fullaxx@gmail.com>
+	Copyright (C) 2025 Brett Kuskie <fullaxx@gmail.com>
 
 	MIT License
 
@@ -24,6 +24,7 @@
 */
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <unistd.h>
 #include <signal.h>
 
@@ -43,6 +44,9 @@ int main(int argc, char *argv[])
 	signal(SIGHUP,	sig_handler);
 
 	while(!g_shutdown) { usleep(1000); }
+
+	char *dockerwait_exit_command = getenv("DOCKERWAIT_EXIT_COMMAND");
+	if (dockerwait_exit_command) { system(dockerwait_exit_command); }
 
 	return 0;
 }
